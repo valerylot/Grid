@@ -1,0 +1,43 @@
+.header, .main, .nav, .footer {
+    background-color: rgb(201, 172, 167);
+    padding: 20px;
+    text-align: center;
+}
+
+body{
+    display: grid;
+    min-height: 100vh;
+    background-color: teal;
+
+    /* we define our columns with grid-template-columns */
+    /* repeat allows us to repeat our columns x amount of times */
+    grid-template-columns: repeat(4, 1fr); 
+
+    /* auto height for header and footer is flexible height for main content */
+    /* auto ensures rows only take up as much vertical space as they need based on content */
+    grid-template-rows: auto 1fr auto; 
+
+    gap: 20px;
+
+}
+
+/* define the layout for each section */
+.header{
+    grid-column: span 4; /* span across all 4 columns */
+    grid-row: 1; /* place in first row */
+}
+
+.nav{
+    grid-column: 4; /* place in 4th column */
+    grid-row: 2; /* place in 2nd row */
+}
+
+.main{
+    grid-column: span 3;
+    grid-row: 2;
+}
+
+.footer{
+    grid-column: 1 / -1;
+    grid-row: 3;
+}
